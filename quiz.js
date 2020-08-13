@@ -42,19 +42,17 @@ const calculation = () => {
     else {
         document.querySelector('.empty-result').textContent = "";
     }
-
     prevailingAttitude(numberReactive, numberManipulated, numberAggressive, numberAssertive)
-
 }
 document.querySelector('.showResult').addEventListener('click', calculation);
 
 const prevailingAttitude = (reactive, manipulated, aggressive, assertive) => {
+    let results = [];
 
-
-
-    // `${reactive} ${manipulated} ${aggressive} ${assertive}`;
-
-    // document.querySelector('.prevailing-attitude-result').textContent = Math.max(reactive, manipulated, aggressive, assertive);
+    document.querySelectorAll('.the-final-result').forEach(item => {
+        results.push(item.textContent);
+    })
+    console.log(results.sort(function(a, b){return a-b}))
 
     if (Math.max(reactive, manipulated, aggressive, assertive) >= 1) {
         if (Math.max(reactive, manipulated, aggressive, assertive) == document.querySelector('.result-bierny').textContent) {
@@ -94,3 +92,7 @@ const valueSupplementation = (attitudeValue, featuresValue) => {
     document.querySelector('.prevailing-attitude-result').textContent = attitude + attitudeValue;
     document.querySelector('.features').innerHTML = features + featuresValue;
 }
+
+
+
+
