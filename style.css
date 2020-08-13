@@ -158,6 +158,11 @@ button:hover {
     width: 150px;
 }
 
+.features {
+    color: rgb(210 210 210);
+    line-height: 23px;
+}
+
 .the-final-result {
     font-size: 20px;
     color: rgb(204, 204, 204);
@@ -168,6 +173,10 @@ button:hover {
     width: 50px;
 }
 
+.underthetitle {
+    color: rgb(210 210 210);
+    text-align: center;
+}
 
 .prevailing-attitude-result {
     color: #0074aa;
