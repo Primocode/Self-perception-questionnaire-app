@@ -16,5 +16,7 @@ Głównym celem było sprawdzenie swojej przeważającej postawy.
   - SCSS
   - JavaScript
 
-LIVE 
+## LIVE 
 https://primocode.github.io/Self-perception-questionnaire-app/
+
+![image](https://github.com/Primocode/Self-perception-questionnaire-app/blob/master/test-autopercepcji.png)
