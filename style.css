@@ -178,6 +178,10 @@ button:hover {
     line-height: 23px;
 }
 
+.not-selected {
+    color: rgb(210 210 210);
+}
+
 .interpretation-of-the-result-title {
     color: rgb(210 210 210);
     font-weight: bold;

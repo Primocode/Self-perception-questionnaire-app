@@ -112,146 +112,151 @@ const displayingValues = () => {
 const displayingInformation = () => {
     const mainContainer = document.querySelector('.container-for-the-result');
     mainContainer.innerHTML = null;
+    document.querySelector('.not-selected').textContent = null;
 
-    document.querySelector('.interpretation-of-the-result-title').textContent = "Jak interpretować wynik?";
-    document.querySelector('.interpretation-of-the-result-text').textContent = "Aplikacja podliczyła punkty dla wszystkich postaw oraz wyświetliła wynik. Pamiętaj im większy procent uzyskanych punktów tym ta postawa jest Ci bliższa. Wyniki mogą być do siebie podobne, jeżeli tak będzie przeczytaj te postawy i określ wówczas które postawy odnoszą się bardziej do Ciebie. Zwróć szczegółną uwagę na różnicę procentowe.";
+    if (returnOrder.amountOfPoints[3] > 0) {
+        document.querySelector('.interpretation-of-the-result-title').textContent = "Jak interpretować wynik?";
+        document.querySelector('.interpretation-of-the-result-text').textContent = "Aplikacja podliczyła punkty dla wszystkich postaw oraz wyświetliła wynik. Pamiętaj im większy procent uzyskanych punktów tym ta postawa jest Ci bliższa. Wyniki mogą być do siebie podobne, jeżeli tak będzie przeczytaj te postawy i określ wówczas które postawy odnoszą się bardziej do Ciebie. Zwróć szczegółną uwagę na różnicę procentowe.";
 
-    const mostPointsFirst = document.createElement('h3');
-    mostPointsFirst.className = "most-points";
-    mostPointsFirst.textContent = `Najwięcej punktów uzyskano dla postawy - ${returnOrder.attitude[3]} (${returnOrder.amountOfPoints[3]} punkty)`
-    mainContainer.appendChild(mostPointsFirst)
+        const mostPointsFirst = document.createElement('h3');
+        mostPointsFirst.className = "most-points";
+        mostPointsFirst.textContent = `Najwięcej punktów uzyskano dla postawy - ${returnOrder.attitude[3]} (${returnOrder.amountOfPoints[3]} punkty)`
+        mainContainer.appendChild(mostPointsFirst)
 
-    const pointsWereObtained = document.createElement('p');
-    pointsWereObtained.className = "points-were-botained";
-    pointsWereObtained.innerHTML = `Uzyskałeś <b>${((parseInt(returnOrder.amountOfPoints[3]) * parseInt(105)) / 100)}%</b> punktów z tej postawy`
-    mainContainer.appendChild(pointsWereObtained)
+        const pointsWereObtained = document.createElement('p');
+        pointsWereObtained.className = "points-were-botained";
+        pointsWereObtained.innerHTML = `Uzyskałeś <b>${((parseInt(returnOrder.amountOfPoints[3]) * parseInt(105)) / 100)}%</b> punktów z tej postawy`
+        mainContainer.appendChild(pointsWereObtained)
 
-    const detailsOfThisAttitude = document.createElement('h3');
-    detailsOfThisAttitude.className = "details-of-this-attitude";
-    detailsOfThisAttitude.textContent = "Szczegóły tej postawy oraz wyjaśnienie"
-    mainContainer.appendChild(detailsOfThisAttitude);
+        const detailsOfThisAttitude = document.createElement('h3');
+        detailsOfThisAttitude.className = "details-of-this-attitude";
+        detailsOfThisAttitude.textContent = "Szczegóły tej postawy oraz wyjaśnienie"
+        mainContainer.appendChild(detailsOfThisAttitude);
 
-    const detailsOfThisPostureText = document.createElement('p');
-    detailsOfThisPostureText.className = "details-of-this-Posture-Text";
-    detailsOfThisPostureText.innerHTML = informationToDisplay.postureDetails[returnOrder.attitude[3]];
-    mainContainer.appendChild(detailsOfThisPostureText);
+        const detailsOfThisPostureText = document.createElement('p');
+        detailsOfThisPostureText.className = "details-of-this-Posture-Text";
+        detailsOfThisPostureText.innerHTML = informationToDisplay.postureDetails[returnOrder.attitude[3]];
+        mainContainer.appendChild(detailsOfThisPostureText);
 
-    const manifestationsOfPosture = document.createElement('h3');
-    manifestationsOfPosture.className = "manifestations-of-posture-title";
-    manifestationsOfPosture.textContent = "Przejawy postawy";
-    mainContainer.appendChild(manifestationsOfPosture)
+        const manifestationsOfPosture = document.createElement('h3');
+        manifestationsOfPosture.className = "manifestations-of-posture-title";
+        manifestationsOfPosture.textContent = "Przejawy postawy";
+        mainContainer.appendChild(manifestationsOfPosture)
 
-    const manifestationsOfPostureText = document.createElement('p');
-    manifestationsOfPostureText.className = "manifestations-of-posture-text";
-    manifestationsOfPostureText.innerHTML = informationToDisplay.manifestationsOfPosture[returnOrder.attitude[3]];
-    mainContainer.appendChild(manifestationsOfPostureText)
+        const manifestationsOfPostureText = document.createElement('p');
+        manifestationsOfPostureText.className = "manifestations-of-posture-text";
+        manifestationsOfPostureText.innerHTML = informationToDisplay.manifestationsOfPosture[returnOrder.attitude[3]];
+        mainContainer.appendChild(manifestationsOfPostureText)
 
-    const thisBehaviorMeansTitle = document.createElement('h3');
-    thisBehaviorMeansTitle.className = "this-behavior-means-title";
-    thisBehaviorMeansTitle.textContent = "Takie zachowanie oznacza, że";
-    mainContainer.appendChild(thisBehaviorMeansTitle);
+        const thisBehaviorMeansTitle = document.createElement('h3');
+        thisBehaviorMeansTitle.className = "this-behavior-means-title";
+        thisBehaviorMeansTitle.textContent = "Takie zachowanie oznacza, że";
+        mainContainer.appendChild(thisBehaviorMeansTitle);
 
-    const thisBehaviorMeansContent = document.createElement('p');
-    thisBehaviorMeansContent.className = "this-behavior-means-content";
-    thisBehaviorMeansContent.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[3]];
-    mainContainer.appendChild(thisBehaviorMeansContent);
+        const thisBehaviorMeansContent = document.createElement('p');
+        thisBehaviorMeansContent.className = "this-behavior-means-content";
+        thisBehaviorMeansContent.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[3]];
+        mainContainer.appendChild(thisBehaviorMeansContent);
 
-    // -------------------
+        // -------------------
 
-    const mostPointsInSecondOrder = document.createElement('h3');
-    mostPointsInSecondOrder.className = "most-points";
-    mostPointsInSecondOrder.textContent = `W drugiej kolejności najwięcej punktów uzyskano dla postawy - ${returnOrder.attitude[2]} (${returnOrder.amountOfPoints[2]} punkty)`;
-    mainContainer.appendChild(mostPointsInSecondOrder);
+        const mostPointsInSecondOrder = document.createElement('h3');
+        mostPointsInSecondOrder.className = "most-points";
+        mostPointsInSecondOrder.textContent = `W drugiej kolejności najwięcej punktów uzyskano dla postawy - ${returnOrder.attitude[2]} (${returnOrder.amountOfPoints[2]} punkty)`;
+        mainContainer.appendChild(mostPointsInSecondOrder);
 
-    const pointsWereObtainedSecond = document.createElement('p');
-    pointsWereObtainedSecond.className = "points-were-botained"
-    pointsWereObtainedSecond.innerHTML = `Uzyskano <b>${((parseInt(returnOrder.amountOfPoints[2]) * parseInt(105)) / 100)}%</b> punktów z tej postawy, to <b>${(((parseInt(returnOrder.amountOfPoints[3]) * parseInt(105)) / 100) - ((parseInt(returnOrder.amountOfPoints[2]) * parseInt(105)) / 100)).toFixed(2)}%</b> mniej od postawy ${returnOrder.attitude[3]}`
-    mainContainer.appendChild(pointsWereObtainedSecond)
+        const pointsWereObtainedSecond = document.createElement('p');
+        pointsWereObtainedSecond.className = "points-were-botained"
+        pointsWereObtainedSecond.innerHTML = `Uzyskano <b>${((parseInt(returnOrder.amountOfPoints[2]) * parseInt(105)) / 100)}%</b> punktów z tej postawy, to <b>${(((parseInt(returnOrder.amountOfPoints[3]) * parseInt(105)) / 100) - ((parseInt(returnOrder.amountOfPoints[2]) * parseInt(105)) / 100)).toFixed(2)}%</b> mniej od postawy ${returnOrder.attitude[3]}`
+        mainContainer.appendChild(pointsWereObtainedSecond)
+        
+        mainContainer.appendChild(detailsOfThisAttitude.cloneNode(true))
+        const detailsOfThisPostureTextSecond = document.createElement('p');
+        detailsOfThisPostureTextSecond.className = "details-of-this-Posture-Text";
+        detailsOfThisPostureTextSecond.textContent = informationToDisplay.postureDetails[returnOrder.attitude[2]];
+        mainContainer.appendChild(detailsOfThisPostureTextSecond);
+        
+        mainContainer.appendChild(manifestationsOfPosture.cloneNode(true))
+
+        const manifestationsOfPostureTextSecond = document.createElement('p');
+        manifestationsOfPostureTextSecond.className = "manifestations-of-posture-text";
+        manifestationsOfPostureTextSecond.innerHTML = informationToDisplay.manifestationsOfPosture[returnOrder.attitude[2]];
+        mainContainer.appendChild(manifestationsOfPostureTextSecond);
+        
+        mainContainer.appendChild(thisBehaviorMeansTitle.cloneNode(true))
+
+        const thisBehaviorMeansContentSecond = document.createElement('p');
+        thisBehaviorMeansContentSecond.className = "this-behavior-means-content";
+        thisBehaviorMeansContentSecond.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[2]];
+        mainContainer.appendChild(thisBehaviorMeansContentSecond);
+
+        // ---------------------
+
+        const mostPointsInThirdOrder = document.createElement('h3');
+        mostPointsInThirdOrder.className= "most-points";
+        mostPointsInThirdOrder.textContent = `W trzeciej kolejności najwięcej punktow uzyskano dla postawy -  ${returnOrder.attitude[1]} (${returnOrder.amountOfPoints[1]} punkty)`;
+        mainContainer.appendChild(mostPointsInThirdOrder);
+
+        const pointsWereObtainedThird = document.createElement('p');
+        pointsWereObtainedThird.className = "points-were-botained";
+        pointsWereObtainedThird.innerHTML = `Uzyskano <b>${((parseInt(returnOrder.amountOfPoints[1]) * parseInt(105)) / 100)}%</b> punktów z tej postawy, to <b>${(((parseInt(returnOrder.amountOfPoints[2]) * parseInt(105)) / 100) - ((parseInt(returnOrder.amountOfPoints[1]) * parseInt(105)) / 100)).toFixed(1)}%</b> mniej od postawy ${returnOrder.attitude[2]}`
+        mainContainer.appendChild(pointsWereObtainedThird)
+
+        mainContainer.appendChild(detailsOfThisAttitude.cloneNode(true))
+
+        const detailsOfThisPostureTextThird = document.createElement('p');
+        detailsOfThisPostureTextThird.className = "details-of-this-Posture-Text";
+        detailsOfThisPostureTextThird.innerHTML = informationToDisplay.postureDetails[returnOrder.attitude[1]];
+        mainContainer.appendChild(detailsOfThisPostureTextThird);
+
+        mainContainer.appendChild(manifestationsOfPosture.cloneNode(true))
+
+        const manifestationsOfPostureTextThird = document.createElement('p');
+        manifestationsOfPostureTextThird.className = "manifestations-of-posture-text";
+        manifestationsOfPostureTextThird.innerHTML = informationToDisplay.manifestationsOfPosture[returnOrder.attitude[1]];
+        mainContainer.appendChild(manifestationsOfPostureTextThird);
     
-    mainContainer.appendChild(detailsOfThisAttitude.cloneNode(true))
-    const detailsOfThisPostureTextSecond = document.createElement('p');
-    detailsOfThisPostureTextSecond.className = "details-of-this-Posture-Text";
-    detailsOfThisPostureTextSecond.textContent = informationToDisplay.postureDetails[returnOrder.attitude[2]];
-    mainContainer.appendChild(detailsOfThisPostureTextSecond);
+        mainContainer.appendChild( thisBehaviorMeansTitle.cloneNode(true))
+
+        const thisBehaviorMeansContentThird = document.createElement('p');
+        thisBehaviorMeansContentThird.className = "this-behavior-means-content";
+        thisBehaviorMeansContentThird.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[1]];
+        mainContainer.appendChild(thisBehaviorMeansContentThird);
+
+        // ------------------------
+
+        const mostPointsInFourthOrder = document.createElement('h3');
+        mostPointsInFourthOrder.className= "most-points";
+        mostPointsInFourthOrder.textContent = `W czwartej kolejności najwięcej punktow uzyskano dla postawy -  ${returnOrder.attitude[0]} (${returnOrder.amountOfPoints[0]} punkty)`;
+        mainContainer.appendChild(mostPointsInFourthOrder);
+
+        const pointsWereObtainedFourth = document.createElement('p');
+        pointsWereObtainedFourth.className = "points-were-botained";
+        pointsWereObtainedFourth.innerHTML = `Uzyskano <b>${((parseInt(returnOrder.amountOfPoints[0]) * parseInt(105)) / 100)}%</b> punktów z tej postawy, to <b>${(((parseInt(returnOrder.amountOfPoints[1]) * parseInt(105)) / 100) - ((parseInt(returnOrder.amountOfPoints[0]) * parseInt(105)) / 100)).toFixed(1)}%</b> mniej od postawy ${returnOrder.attitude[1]}`
+        mainContainer.appendChild(pointsWereObtainedFourth)
+
+        mainContainer.appendChild(detailsOfThisAttitude.cloneNode(true))
+
+        const detailsOfThisPostureTextFourth = document.createElement('p');
+        detailsOfThisPostureTextFourth.className = "details-of-this-Posture-Text";
+        detailsOfThisPostureTextFourth.innerHTML = informationToDisplay.postureDetails[returnOrder.attitude[0]];
+        mainContainer.appendChild(detailsOfThisPostureTextFourth);
+
+        mainContainer.appendChild(manifestationsOfPosture.cloneNode(true))
+
+        const manifestationsOfPostureTextFourth = document.createElement('p');
+        manifestationsOfPostureTextFourth.className = "manifestations-of-posture-text";
+        manifestationsOfPostureTextFourth.innerHTML = informationToDisplay.manifestationsOfPosture[returnOrder.attitude[0]];
+        mainContainer.appendChild(manifestationsOfPostureTextFourth);
     
-    mainContainer.appendChild(manifestationsOfPosture.cloneNode(true))
+        mainContainer.appendChild( thisBehaviorMeansTitle.cloneNode(true))
 
-    const manifestationsOfPostureTextSecond = document.createElement('p');
-    manifestationsOfPostureTextSecond.className = "manifestations-of-posture-text";
-    manifestationsOfPostureTextSecond.innerHTML = informationToDisplay.manifestationsOfPosture[returnOrder.attitude[2]];
-    mainContainer.appendChild(manifestationsOfPostureTextSecond);
-    
-    mainContainer.appendChild(thisBehaviorMeansTitle.cloneNode(true))
-
-    const thisBehaviorMeansContentSecond = document.createElement('p');
-    thisBehaviorMeansContentSecond.className = "this-behavior-means-content";
-    thisBehaviorMeansContentSecond.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[2]];
-    mainContainer.appendChild(thisBehaviorMeansContentSecond);
-
-    // ---------------------
-
-    const mostPointsInThirdOrder = document.createElement('h3');
-    mostPointsInThirdOrder.className= "most-points";
-    mostPointsInThirdOrder.textContent = `W trzeciej kolejności najwięcej punktow uzyskano dla postawy -  ${returnOrder.attitude[1]} (${returnOrder.amountOfPoints[1]} punkty)`;
-    mainContainer.appendChild(mostPointsInThirdOrder);
-
-    const pointsWereObtainedThird = document.createElement('p');
-    pointsWereObtainedThird.className = "points-were-botained";
-    pointsWereObtainedThird.innerHTML = `Uzyskano <b>${((parseInt(returnOrder.amountOfPoints[1]) * parseInt(105)) / 100)}%</b> punktów z tej postawy, to <b>${(((parseInt(returnOrder.amountOfPoints[2]) * parseInt(105)) / 100) - ((parseInt(returnOrder.amountOfPoints[1]) * parseInt(105)) / 100)).toFixed(1)}%</b> mniej od postawy ${returnOrder.attitude[2]}`
-    mainContainer.appendChild(pointsWereObtainedThird)
-
-    mainContainer.appendChild(detailsOfThisAttitude.cloneNode(true))
-
-    const detailsOfThisPostureTextThird = document.createElement('p');
-    detailsOfThisPostureTextThird.className = "details-of-this-Posture-Text";
-    detailsOfThisPostureTextThird.innerHTML = informationToDisplay.postureDetails[returnOrder.attitude[1]];
-    mainContainer.appendChild(detailsOfThisPostureTextThird);
-
-    mainContainer.appendChild(manifestationsOfPosture.cloneNode(true))
-
-    const manifestationsOfPostureTextThird = document.createElement('p');
-    manifestationsOfPostureTextThird.className = "manifestations-of-posture-text";
-    manifestationsOfPostureTextThird.innerHTML = informationToDisplay.manifestationsOfPosture[returnOrder.attitude[1]];
-    mainContainer.appendChild(manifestationsOfPostureTextThird);
-   
-    mainContainer.appendChild( thisBehaviorMeansTitle.cloneNode(true))
-
-    const thisBehaviorMeansContentThird = document.createElement('p');
-    thisBehaviorMeansContentThird.className = "this-behavior-means-content";
-    thisBehaviorMeansContentThird.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[1]];
-    mainContainer.appendChild(thisBehaviorMeansContentThird);
-
-    // ------------------------
-
-    const mostPointsInFourthOrder = document.createElement('h3');
-    mostPointsInFourthOrder.className= "most-points";
-    mostPointsInFourthOrder.textContent = `W czwartej kolejności najwięcej punktow uzyskano dla postawy -  ${returnOrder.attitude[0]} (${returnOrder.amountOfPoints[0]} punkty)`;
-    mainContainer.appendChild(mostPointsInFourthOrder);
-
-    const pointsWereObtainedFourth = document.createElement('p');
-    pointsWereObtainedFourth.className = "points-were-botained";
-    pointsWereObtainedFourth.innerHTML = `Uzyskano <b>${((parseInt(returnOrder.amountOfPoints[0]) * parseInt(105)) / 100)}%</b> punktów z tej postawy, to <b>${(((parseInt(returnOrder.amountOfPoints[1]) * parseInt(105)) / 100) - ((parseInt(returnOrder.amountOfPoints[0]) * parseInt(105)) / 100)).toFixed(1)}%</b> mniej od postawy ${returnOrder.attitude[1]}`
-    mainContainer.appendChild(pointsWereObtainedFourth)
-
-    mainContainer.appendChild(detailsOfThisAttitude.cloneNode(true))
-
-    const detailsOfThisPostureTextFourth = document.createElement('p');
-    detailsOfThisPostureTextFourth.className = "details-of-this-Posture-Text";
-    detailsOfThisPostureTextFourth.innerHTML = informationToDisplay.postureDetails[returnOrder.attitude[0]];
-    mainContainer.appendChild(detailsOfThisPostureTextFourth);
-
-    mainContainer.appendChild(manifestationsOfPosture.cloneNode(true))
-
-    const manifestationsOfPostureTextFourth = document.createElement('p');
-    manifestationsOfPostureTextFourth.className = "manifestations-of-posture-text";
-    manifestationsOfPostureTextFourth.innerHTML = informationToDisplay.manifestationsOfPosture[returnOrder.attitude[0]];
-    mainContainer.appendChild(manifestationsOfPostureTextFourth);
-   
-    mainContainer.appendChild( thisBehaviorMeansTitle.cloneNode(true))
-
-    const thisBehaviorMeansContentFourth = document.createElement('p');
-    thisBehaviorMeansContentFourth.className = "this-behavior-means-content";
-    thisBehaviorMeansContentFourth.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[0]];
-    mainContainer.appendChild(thisBehaviorMeansContentFourth);
-
+        const thisBehaviorMeansContentFourth = document.createElement('p');
+        thisBehaviorMeansContentFourth.className = "this-behavior-means-content";
+        thisBehaviorMeansContentFourth.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[0]];
+        mainContainer.appendChild(thisBehaviorMeansContentFourth);
+    }
+    else {
+        document.querySelector('.not-selected').textContent = "Musisz najpierw wypełnić kwestionariusz by otrzymać wynik";
+    }
 }
