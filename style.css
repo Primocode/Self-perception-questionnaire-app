@@ -178,10 +178,6 @@ button:hover {
     line-height: 23px;
 }
 
-.interpretation-of-the-result {
-
-}
-
 .interpretation-of-the-result-title {
     color: rgb(210 210 210);
     font-weight: bold;
@@ -191,6 +187,7 @@ button:hover {
 
 .interpretation-of-the-result-text {
     color: rgb(210 210 210);
+    margin-bottom: 10px;
 }
 
 .the-final-result {
@@ -201,6 +198,50 @@ button:hover {
     border-left: none;
     padding: 5px;
     width: 50px;
+}
+
+.most-points {
+    color: #0074aa;
+    font-size: 21px;
+    border-top: 2px solid rgb(255 255 255 / 26%);
+    padding-top: 10px;
+}
+
+.points-were-botained {
+    color: rgb(210 210 210);
+    font-size: 14px;
+}
+
+.details-of-this-attitude {
+    color: rgb(210 210 210);
+    margin-top: 5px;
+}
+
+.details-of-this-Posture-Text {
+    color: rgb(191 191 191);
+    font-size: 14px;
+    border-left: 4px solid rgb(191 191 191);
+    padding-left: 10px;
+    margin: 3px 0px 8px 0px;
+}
+
+.manifestations-of-posture-title {
+    color: rgb(210 210 210);
+}
+
+.manifestations-of-posture-text {
+    color: rgb(191 191 191);
+    font-size: 14px;
+}
+
+.this-behavior-means-title {
+    color: rgb(210 210 210);
+}
+
+.this-behavior-means-content {
+    color: rgb(191 191 191);
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
 .underthetitle {

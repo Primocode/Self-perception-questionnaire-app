@@ -19,9 +19,9 @@ const informationToDisplay = {
 
         manipulujacy: "U jej podstaw leży maskowanie uczuć i brak otwartości, chęć wygrania cudzym kosztem, nastawienie na wykorzystanie innych, traktowanie innych jak pionki w grze, w której są przewidziani do odstrzału, podejrzliwość, nieuczciwość, traktowanie ludzi jako głupszych. Rezultatem tej postawy jest złość i agresja otoczenia, narastanie konfliktów, wymierne straty innych ludzi, niechęć do kontaktów z osobą manipulującą, utrata zaufania. Manipulatorom często zmienia się wyraz twarzy. Można zauważyć brak spójności między mową ciała, a słowami. Ta nieautentyczna mowa ciała jest charakterystyczna dla postawy manipulacyjnej. Manipulatorzy mają na ogół ugrzeczniony, na zmianę z agresywnym sposób bycia, ale z treści tego co mówią wynika jednoznacznie, że uważają innych za gorszych od siebie. Chcą wygrać cudzym kosztem, udając, że wcale tego nie chcą.",
 
-        agresywny: "REAKCJE AGRESYWNE na sytuacje przekraczania granic prowadzą z kolei do eskalacji konfliktu, pogorszenia relacji lub przekroczenia granic osoby, która formułuje w stosunku do nas oczekiwania przekraczające granice relacji. Chodzi tu zarówno o wszelkie formy agresji słownej, biernego oporu – agresywnego, nie reagowania na formułowane oczekiwania, jak i posługiwanie się manipulacyjnymi technikami w stosunku do osoby, która wydaje się przekraczać granice. Przykłady takich zachowań można dowolnie „mnożyc”: obrzucenie obelgami znajomego, który po raz kolejny chce od nas pożyczyć pieniądze, ignorowanie telefonów od klienta, który najprawdopodobniej chce pomocy wykraczającej poza zakres obowiazków pracownika. Przekraczanie granic drugiej osoby (zwłaszcza w przypadku reakcji bierno – agresywnych), nawet w reakcji na jej zachowania manipulacyjne, nie ma nic wspólnego z asertywnością. Podobnie sprawa będzie się miała z artykułowaniem własnych oczekiwań w stosunku do innych. Dlatego asertywnymi bedziemy określać takie zachowania wobec innych osób, które pozwalając na zachowanie własnych oczekiwań, nie bedą naruszały cudzych granic. ", 
+        agresywny: "Reakcje agresywne na sytuacje przekraczania granic prowadzą z kolei do eskalacji konfliktu, pogorszenia relacji lub przekroczenia granic osoby, która formułuje w stosunku do nas oczekiwania przekraczające granice relacji. Chodzi tu zarówno o wszelkie formy agresji słownej, biernego oporu – agresywnego, nie reagowania na formułowane oczekiwania, jak i posługiwanie się manipulacyjnymi technikami w stosunku do osoby, która wydaje się przekraczać granice. Przykłady takich zachowań można dowolnie „mnożyc”: obrzucenie obelgami znajomego, który po raz kolejny chce od nas pożyczyć pieniądze, ignorowanie telefonów od klienta, który najprawdopodobniej chce pomocy wykraczającej poza zakres obowiazków pracownika. Przekraczanie granic drugiej osoby (zwłaszcza w przypadku reakcji bierno – agresywnych), nawet w reakcji na jej zachowania manipulacyjne, nie ma nic wspólnego z asertywnością. Podobnie sprawa będzie się miała z artykułowaniem własnych oczekiwań w stosunku do innych. Dlatego asertywnymi bedziemy określać takie zachowania wobec innych osób, które pozwalając na zachowanie własnych oczekiwań, nie bedą naruszały cudzych granic. ", 
 
-        bierny: "polegają na podporzadkowaniu się formułowanym w stosunku do nas oczekiwaniom.Nie chodzi tu o każde oczekiwania, ale takie, które w sposób manipulacyjny przekraczają nasze granice.Zachowania uległe mogą pojawić się w różnych układach społecznych. Najczesciej spotykamy je tam, gdzie istnieje hierarchia władzy: podwładni często ujawniają zachowania uległe względem swoich przełożonych, choć zdarzają się także sytuacje odwrotne – przełożony jest uległy wobec swoich podwładnych. Uległość może pojawić się także w relacjach miedzy współpracownikami tej samej organizacji lub w relacjach pracownik organizacji – klient. Uległość pojawia się jako reakcja na przekroczenie psychologicznych granic przez inne osoby, w celu przeciwdziałania eskalacji konfliktu lub agresji.",
+        bierny: "Reakcje bierne polegają na podporzadkowaniu się formułowanym w stosunku do nas oczekiwaniom.Nie chodzi tu o każde oczekiwania, ale takie, które w sposób manipulacyjny przekraczają nasze granice.Zachowania uległe mogą pojawić się w różnych układach społecznych. Najczesciej spotykamy je tam, gdzie istnieje hierarchia władzy: podwładni często ujawniają zachowania uległe względem swoich przełożonych, choć zdarzają się także sytuacje odwrotne – przełożony jest uległy wobec swoich podwładnych. Uległość może pojawić się także w relacjach miedzy współpracownikami tej samej organizacji lub w relacjach pracownik organizacji – klient. Uległość pojawia się jako reakcja na przekroczenie psychologicznych granic przez inne osoby, w celu przeciwdziałania eskalacji konfliktu lub agresji.",
     },
     manifestationsOfPosture: {
         asertywny: "- Bronimy własnych praw, uznając jednocześnie prawa innych, <br> -  Wyrażamy swoje potrzeby, poglądy i odczucia, <br> -  Nasze stosunki z innymi cechuje wiara w siebie.",
@@ -118,13 +118,13 @@ const displayingInformation = () => {
     document.querySelector('.interpretation-of-the-result-text').textContent = "Aplikacja podliczyła punkty dla wszystkich postaw oraz wyświetliła wynik. Pamiętaj im większy procent uzyskanych punktów tym ta postawa jest Ci bliższa. Wyniki mogą być do siebie podobne, jeżeli tak będzie przeczytaj te postawy i określ wówczas które postawy odnoszą się bardziej do Ciebie. Zwróć szczegółną uwagę na różnicę procentowe.";
 
     const mostPointsFirst = document.createElement('h3');
-    mostPointsFirst.className = "most-points-first";
+    mostPointsFirst.className = "most-points";
     mostPointsFirst.textContent = `Najwięcej punktów uzyskano dla postawy - ${returnOrder.attitude[3]} (${returnOrder.amountOfPoints[3]} punkty)`
     mainContainer.appendChild(mostPointsFirst)
 
     const pointsWereObtained = document.createElement('p');
     pointsWereObtained.className = "points-were-botained";
-    pointsWereObtained.textContent = `Uzyskałeś ${((parseInt(returnOrder.amountOfPoints[3]) * parseInt(105)) / 100)}% punktów z tej postawy`
+    pointsWereObtained.innerHTML = `Uzyskałeś <b>${((parseInt(returnOrder.amountOfPoints[3]) * parseInt(105)) / 100)}%</b> punktów z tej postawy`
     mainContainer.appendChild(pointsWereObtained)
 
     const detailsOfThisAttitude = document.createElement('h3');
@@ -160,13 +160,13 @@ const displayingInformation = () => {
     // DRUGA KOLEJNOŚĆ
 
     const mostPointsInSecondOrder = document.createElement('h3');
-    mostPointsInSecondOrder.className = "most-points-in-second-order";
+    mostPointsInSecondOrder.className = "most-points";
     mostPointsInSecondOrder.textContent = `W drugiej kolejności najwięcej punktów uzyskano dla postawy - ${returnOrder.attitude[2]} (${returnOrder.amountOfPoints[2]} punkty)`;
     mainContainer.appendChild(mostPointsInSecondOrder);
 
     const pointsWereObtainedSecond = document.createElement('p');
     pointsWereObtainedSecond.className = "points-were-botained"
-    pointsWereObtainedSecond.textContent = `Uzyskano ${((parseInt(returnOrder.amountOfPoints[2]) * parseInt(105)) / 100)}% punktów z tej postawy, to ${(((parseInt(returnOrder.amountOfPoints[3]) * parseInt(105)) / 100) - ((parseInt(returnOrder.amountOfPoints[2]) * parseInt(105)) / 100)).toFixed(2)}% mniej od postawy ${returnOrder.attitude[3]}`
+    pointsWereObtainedSecond.innerHTML = `Uzyskano <b>${((parseInt(returnOrder.amountOfPoints[2]) * parseInt(105)) / 100)}%</b> punktów z tej postawy, to <b>${(((parseInt(returnOrder.amountOfPoints[3]) * parseInt(105)) / 100) - ((parseInt(returnOrder.amountOfPoints[2]) * parseInt(105)) / 100)).toFixed(2)}%</b> mniej od postawy ${returnOrder.attitude[3]}`
     mainContainer.appendChild(pointsWereObtainedSecond)
     
     mainContainer.appendChild(detailsOfThisAttitude.cloneNode(true))
@@ -188,4 +188,71 @@ const displayingInformation = () => {
     thisBehaviorMeansContentSecond.className = "this-behavior-means-content";
     thisBehaviorMeansContentSecond.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[2]];
     mainContainer.appendChild(thisBehaviorMeansContentSecond);
+
+    // Trzecia kolejność 
+
+    const mostPointsInThirdOrder = document.createElement('h3');
+    mostPointsInThirdOrder.className= "most-points";
+    mostPointsInThirdOrder.textContent = `W trzeciej kolejności najwięcej punktow uzyskano dla postawy -  ${returnOrder.attitude[1]} (${returnOrder.amountOfPoints[1]} punkty)`;
+    mainContainer.appendChild(mostPointsInThirdOrder);
+
+    const pointsWereObtainedThird = document.createElement('p');
+    pointsWereObtainedThird.className = "points-were-botained";
+    pointsWereObtainedThird.innerHTML = `Uzyskano <b>${((parseInt(returnOrder.amountOfPoints[1]) * parseInt(105)) / 100)}%</b> punktów z tej postawy, to <b>${(((parseInt(returnOrder.amountOfPoints[2]) * parseInt(105)) / 100) - ((parseInt(returnOrder.amountOfPoints[1]) * parseInt(105)) / 100)).toFixed(1)}%</b> mniej od postawy ${returnOrder.attitude[2]}`
+    mainContainer.appendChild(pointsWereObtainedThird)
+
+    mainContainer.appendChild(detailsOfThisAttitude.cloneNode(true))
+
+    const detailsOfThisPostureTextThird = document.createElement('p');
+    detailsOfThisPostureTextThird.className = "details-of-this-Posture-Text";
+    detailsOfThisPostureTextThird.innerHTML = informationToDisplay.postureDetails[returnOrder.attitude[1]];
+    mainContainer.appendChild(detailsOfThisPostureTextThird);
+
+    mainContainer.appendChild(manifestationsOfPosture.cloneNode(true))
+
+    const manifestationsOfPostureTextThird = document.createElement('p');
+    manifestationsOfPostureTextThird.className = "manifestations-of-posture-text";
+    manifestationsOfPostureTextThird.innerHTML = informationToDisplay.manifestationsOfPosture[returnOrder.attitude[1]];
+    mainContainer.appendChild(manifestationsOfPostureTextThird);
+   
+    mainContainer.appendChild( thisBehaviorMeansTitle.cloneNode(true))
+
+    const thisBehaviorMeansContentThird = document.createElement('p');
+    thisBehaviorMeansContentThird.className = "this-behavior-means-content";
+    thisBehaviorMeansContentThird.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[1]];
+    mainContainer.appendChild(thisBehaviorMeansContentThird);
+
+    // czwarta kolejność 
+
+    const mostPointsInFourthOrder = document.createElement('h3');
+    mostPointsInFourthOrder.className= "most-points";
+    mostPointsInFourthOrder.textContent = `W czwartej kolejności najwięcej punktow uzyskano dla postawy -  ${returnOrder.attitude[0]} (${returnOrder.amountOfPoints[0]} punkty)`;
+    mainContainer.appendChild(mostPointsInFourthOrder);
+
+    const pointsWereObtainedFourth = document.createElement('p');
+    pointsWereObtainedFourth.className = "points-were-botained";
+    pointsWereObtainedFourth.innerHTML = `Uzyskano <b>${((parseInt(returnOrder.amountOfPoints[0]) * parseInt(105)) / 100)}%</b> punktów z tej postawy, to <b>${(((parseInt(returnOrder.amountOfPoints[1]) * parseInt(105)) / 100) - ((parseInt(returnOrder.amountOfPoints[0]) * parseInt(105)) / 100)).toFixed(1)}%</b> mniej od postawy ${returnOrder.attitude[1]}`
+    mainContainer.appendChild(pointsWereObtainedFourth)
+
+    mainContainer.appendChild(detailsOfThisAttitude.cloneNode(true))
+
+    const detailsOfThisPostureTextFourth = document.createElement('p');
+    detailsOfThisPostureTextFourth.className = "details-of-this-Posture-Text";
+    detailsOfThisPostureTextFourth.innerHTML = informationToDisplay.postureDetails[returnOrder.attitude[0]];
+    mainContainer.appendChild(detailsOfThisPostureTextFourth);
+
+    mainContainer.appendChild(manifestationsOfPosture.cloneNode(true))
+
+    const manifestationsOfPostureTextFourth = document.createElement('p');
+    manifestationsOfPostureTextFourth.className = "manifestations-of-posture-text";
+    manifestationsOfPostureTextFourth.innerHTML = informationToDisplay.manifestationsOfPosture[returnOrder.attitude[0]];
+    mainContainer.appendChild(manifestationsOfPostureTextFourth);
+   
+    mainContainer.appendChild( thisBehaviorMeansTitle.cloneNode(true))
+
+    const thisBehaviorMeansContentFourth = document.createElement('p');
+    thisBehaviorMeansContentFourth.className = "this-behavior-means-content";
+    thisBehaviorMeansContentFourth.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[0]];
+    mainContainer.appendChild(thisBehaviorMeansContentFourth);
+
 }
