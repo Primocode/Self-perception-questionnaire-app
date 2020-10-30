@@ -32,7 +32,7 @@ const informationToDisplay = {
     aSignOfBehavior: {
         asertywny: "- Takie jest moje zdanie, <br> - Tak to odczuwam, <br> - Tak oto widzę tę sytuację, <br> - Chciałbym/ chciałabym usłyszeć, <br> jak Ty się z tym czujesz; może uda nam <br> się znaleźć rozwiązanie zadowalające nas oboje.",
         manipulujacy: "- Liczy się to co ja zyskam, a nie Ty. <br> - Liczą się moje odczucia, nie Twoje. <br> - Nie ważne że Ty wiele stracisz, ważne że ja łatwo coś zyskam.",
-        agresywny: "- Ja tak uważam, a Ty jesteś głupi, skoro myślisz inaczej, <br> - Takie są moje odczucia – Twoje się nie liczą, <br> - Tak oto wygląda sytuacja: <br>nie obchodzi mnie, jak Ty ją widzisz.",
+        agresywny: "- Ja tak uważam, a Ty jesteś głupi, skoro myślisz inaczej, <br> - Takie są moje odczucia – Twoje się nie liczą, <br> - Tak oto wygląda sytuacja: nie obchodzi mnie, jak Ty ją widzisz.",
         bierny: "- Liczy się to, co Ty myślisz, nie to, co ja myślę, <br> - Liczą się Twoje odczucia, nie moje, <br> - Ważne jest, jak Ty widzisz tę sytuację.",
     }
 }
@@ -99,7 +99,6 @@ const displayingValues = () => {
                 returnOrder.attitude.push(element);
             }
         })
-
     })
     returnOrder.attitude.forEach(item => {
         returnOrder.amountOfPoints.push(resultsValue[item])
@@ -157,7 +156,7 @@ const displayingInformation = () => {
     thisBehaviorMeansContent.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[3]];
     mainContainer.appendChild(thisBehaviorMeansContent);
 
-    // DRUGA KOLEJNOŚĆ
+    // -------------------
 
     const mostPointsInSecondOrder = document.createElement('h3');
     mostPointsInSecondOrder.className = "most-points";
@@ -189,7 +188,7 @@ const displayingInformation = () => {
     thisBehaviorMeansContentSecond.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[2]];
     mainContainer.appendChild(thisBehaviorMeansContentSecond);
 
-    // Trzecia kolejność 
+    // ---------------------
 
     const mostPointsInThirdOrder = document.createElement('h3');
     mostPointsInThirdOrder.className= "most-points";
@@ -222,7 +221,7 @@ const displayingInformation = () => {
     thisBehaviorMeansContentThird.innerHTML = informationToDisplay.aSignOfBehavior[returnOrder.attitude[1]];
     mainContainer.appendChild(thisBehaviorMeansContentThird);
 
-    // czwarta kolejność 
+    // ------------------------
 
     const mostPointsInFourthOrder = document.createElement('h3');
     mostPointsInFourthOrder.className= "most-points";
