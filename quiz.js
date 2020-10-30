@@ -120,7 +120,7 @@ const displayingInformation = () => {
 
         const mostPointsFirst = document.createElement('h3');
         mostPointsFirst.className = "most-points";
-        mostPointsFirst.textContent = `Najwięcej punktów uzyskano dla postawy - ${returnOrder.attitude[3]} (${returnOrder.amountOfPoints[3]} punkty)`
+        mostPointsFirst.textContent = `Najwięcej punktów uzyskano dla postawy - ${returnOrder.attitude[3]} (${returnOrder.amountOfPoints[3]} pkt)`
         mainContainer.appendChild(mostPointsFirst)
 
         const pointsWereObtained = document.createElement('p');
@@ -162,7 +162,7 @@ const displayingInformation = () => {
 
         const mostPointsInSecondOrder = document.createElement('h3');
         mostPointsInSecondOrder.className = "most-points";
-        mostPointsInSecondOrder.textContent = `W drugiej kolejności najwięcej punktów uzyskano dla postawy - ${returnOrder.attitude[2]} (${returnOrder.amountOfPoints[2]} punkty)`;
+        mostPointsInSecondOrder.textContent = `W drugiej kolejności najwięcej punktów uzyskano dla postawy - ${returnOrder.attitude[2]} (${returnOrder.amountOfPoints[2]} pkt)`;
         mainContainer.appendChild(mostPointsInSecondOrder);
 
         const pointsWereObtainedSecond = document.createElement('p');
@@ -194,7 +194,7 @@ const displayingInformation = () => {
 
         const mostPointsInThirdOrder = document.createElement('h3');
         mostPointsInThirdOrder.className= "most-points";
-        mostPointsInThirdOrder.textContent = `W trzeciej kolejności najwięcej punktow uzyskano dla postawy -  ${returnOrder.attitude[1]} (${returnOrder.amountOfPoints[1]} punkty)`;
+        mostPointsInThirdOrder.textContent = `W trzeciej kolejności najwięcej punktow uzyskano dla postawy -  ${returnOrder.attitude[1]} (${returnOrder.amountOfPoints[1]} pkt)`;
         mainContainer.appendChild(mostPointsInThirdOrder);
 
         const pointsWereObtainedThird = document.createElement('p');
@@ -227,7 +227,7 @@ const displayingInformation = () => {
 
         const mostPointsInFourthOrder = document.createElement('h3');
         mostPointsInFourthOrder.className= "most-points";
-        mostPointsInFourthOrder.textContent = `W czwartej kolejności najwięcej punktow uzyskano dla postawy -  ${returnOrder.attitude[0]} (${returnOrder.amountOfPoints[0]} punkty)`;
+        mostPointsInFourthOrder.textContent = `W czwartej kolejności najwięcej punktow uzyskano dla postawy -  ${returnOrder.attitude[0]} (${returnOrder.amountOfPoints[0]} pkt)`;
         mainContainer.appendChild(mostPointsInFourthOrder);
 
         const pointsWereObtainedFourth = document.createElement('p');

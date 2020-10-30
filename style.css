@@ -240,6 +240,7 @@ button:hover {
 
 .this-behavior-means-title {
     color: rgb(210 210 210);
+    margin-top: 6px;
 }
 
 .this-behavior-means-content {
